@@ -1,0 +1,30 @@
+# Environment files
+config/.env
+*.env
+!.env.example
+
+# Secrets
+*secret*.yaml
+!secrets.example.yaml
+
+# Backup files
+backups/
+*.tar.gz
+*.sql.gz
+*.backup
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

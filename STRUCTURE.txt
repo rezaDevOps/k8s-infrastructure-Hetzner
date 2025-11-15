@@ -1,0 +1,52 @@
+k8s-infrastructure/
+│
+├── 📄 README.md                          Main project documentation
+├── 📄 QUICKSTART.md                      15-minute deployment guide
+├── 📄 PROJECT_STRUCTURE.md               Complete file reference
+├── 📄 .gitignore                         Git ignore rules
+│
+├── 📁 scripts/                           Installation & maintenance scripts
+│   ├── 🔧 01-install-k3s.sh             Install K3s cluster
+│   ├── 🔧 02-install-cert-manager.sh    Install cert-manager
+│   ├── 🔧 03-install-traefik.sh         Install Traefik ingress
+│   ├── 🔧 04-setup-secrets.sh           Create Kubernetes secrets
+│   ├── 🔧 05-deploy-all.sh              Deploy n8n
+│   ├── 🔧 06-install-argocd.sh          Install ArgoCD
+│   ├── 🔧 backup.sh                     Backup script
+│   └── 🔧 monitor.sh                    Monitoring script
+│
+├── 📁 base/                              Base infrastructure
+│   ├── 📁 cert-manager/
+│   │   └── 📄 letsencrypt-issuer.yaml   Let's Encrypt config
+│   └── 📁 traefik/
+│       └── 📄 values.yaml               Traefik Helm values
+│
+├── 📁 apps/                              Applications
+│   ├── 📁 n8n/
+│   │   ├── 📄 kustomization.yaml        Kustomize config
+│   │   ├── 📄 namespace.yaml            Namespace
+│   │   ├── 📄 postgres-statefulset.yaml PostgreSQL
+│   │   ├── 📄 n8n-deployment.yaml       n8n Deployment
+│   │   ├── 📄 n8n-service.yaml          n8n Service
+│   │   ├── 📄 n8n-ingress.yaml          n8n Ingress (HTTPS)
+│   │   └── 📄 secrets.example.yaml      Secrets template
+│   │
+│   └── 📁 argocd/
+│       ├── 📄 ingress.yaml              ArgoCD Ingress
+│       └── 📁 applications/
+│           └── 📄 n8n-app.yaml          n8n ArgoCD App
+│
+├── 📁 config/                            Configuration
+│   ├── 🔐 .env                          Environment variables (secure passwords)
+│   └── 📄 .env.example                  Environment template
+│
+└── 📁 docs/                              Documentation
+    ├── 📄 installation.md               Installation guide
+    ├── 📄 usage.md                      Usage guide
+    └── 📄 troubleshooting.md            Troubleshooting guide
+
+📊 Summary:
+- 28 files
+- 15 directories
+- 8 executable scripts
+- Complete production-ready infrastructure
